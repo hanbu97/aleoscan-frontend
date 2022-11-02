@@ -4,9 +4,6 @@
 
 <script setup >
 import { onMounted, ref,getCurrentInstance } from "vue";
-import WorldGeo from "../map/json/world.json";
-import "echarts/lib/chart/map";
-
 import VueEcharts from '../components/vueEcharts/inex.vue'
 
 function createMapOption(data) {

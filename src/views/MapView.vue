@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <div id="myMap" ref="myMap" style="width: 100vw; height: 100vh;"></div>
+    map 地图
   </div>
 </template>
 
@@ -73,41 +73,34 @@ export default {
     };
   },
   created() {},
-  mounted() {
-    this.drawChinaMap();
-  },
-  updated() {
-    if (!this.chart) {
-      this.initChart();
-    }
-  },
-  beforeDestroy() {
-    if (!this.chart) {
-      return;
-    }
-    this.chart.dispose();
-    this.chart = null;
-  },
+  // mounted() {
+  //   this.drawChinaMap();
+  // },
+  // updated() {
+  //   if (!this.chart) {
+  //     this.initChart();
+  //   }
+  // },
+  // beforeDestroy() {
+  //   if (!this.chart) {
+  //     return;
+  //   }
+  //   this.chart.dispose();
+  //   this.chart = null;
+  // },
   computed: {},
   methods: {
     drawChinaMap() {
-      this.chart = echarts.init(document.getElementById("myMap"), "macarons");
-      echarts.registerMap("world", WorldGeo);
-      this.chart.setOption(this.mapOption);
-      this.chart.on("click", function (params) {
-        //此点击事件也可以做为其他echarts图表的点击 事件
-        // alert(params.name);
-        // console.info(params);
-      });
+      // this.chart = echarts.init(document.getElementById("myMap"), "macarons");
+      // echarts.registerMap("world", WorldGeo);
+      // this.chart.setOption(this.mapOption);
+      // this.chart.on("click", function (params) {
+      // });
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-#myMap {
-  padding-top: 0px;
-  padding-left: 300px;
-  overflow: hidden;
-}
+
 </style>

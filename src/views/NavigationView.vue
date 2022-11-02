@@ -170,10 +170,7 @@ import TheWelcome from "../components/TheWelcome.vue";
 
 .box-card {
   /* top: 0px; */
-  width: 80vw;
-  margin: 10vw;
-  margin-top: 1vw;
-  /* width: 100%; */
+  width: 100%;
   display: inline-block;
   position: relative;
   background-color: transparent;

@@ -1,8 +1,6 @@
 <template>
   <div class="about">
-    <!-- <h1>This is an about page</h1> -->
-    <el-button>I am ElButton</el-button>
-    <div id="myMap" ref="myMap" style="width: 600px; height: 300px"></div>
+    新闻
   </div>
 </template>
 
@@ -264,19 +262,7 @@ export default {
   },
   created() {},
   mounted() {
-    this.drawChinaMap();
-  },
-  updated() {
-    if (!this.chart) {
-      this.initChart();
-    }
-  },
-  beforeDestroy() {
-    if (!this.chart) {
-      return;
-    }
-    this.chart.dispose();
-    this.chart = null;
+    // this.drawChinaMap();
   },
   computed: {},
   methods: {
@@ -296,12 +282,6 @@ export default {
 };
 </script>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
+<style lang="sass" scoped>
+
 </style>

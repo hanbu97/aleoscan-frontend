@@ -1,19 +1,16 @@
 <template>
-  <div class="about">
-    map 地图
-  </div>
+  <VueEcharts :options="mapOptions" ref="echarts" />
 </template>
 
-<script>
-import * as echarts from "echarts/core";
-import "echarts/lib/chart/map";
+<script setup >
+import { onMounted, ref,getCurrentInstance } from "vue";
 import WorldGeo from "../map/json/world.json";
+import "echarts/lib/chart/map";
 
-export default {
-  data() {
-    return {
-      chart: null,
-      mapOption: {
+import VueEcharts from '../components/vueEcharts/inex.vue'
+
+function createMapOption(data) {
+  return {
         backgroundColor: "rgba(0, 0, 0, 0)",
         title: {
           left: "center",
@@ -69,36 +66,14 @@ export default {
             },
           },
         ],
-      },
-    };
-  },
-  created() {},
-  // mounted() {
-  //   this.drawChinaMap();
-  // },
-  // updated() {
-  //   if (!this.chart) {
-  //     this.initChart();
-  //   }
-  // },
-  // beforeDestroy() {
-  //   if (!this.chart) {
-  //     return;
-  //   }
-  //   this.chart.dispose();
-  //   this.chart = null;
-  // },
-  computed: {},
-  methods: {
-    drawChinaMap() {
-      // this.chart = echarts.init(document.getElementById("myMap"), "macarons");
-      // echarts.registerMap("world", WorldGeo);
-      // this.chart.setOption(this.mapOption);
-      // this.chart.on("click", function (params) {
-      // });
-    },
-  },
-};
+      }
+}
+
+const mapOptions = ref({})
+onMounted(() =>{
+    mapOptions.value = createMapOption()
+})
+
 </script>
 
 <style lang="scss" scoped>

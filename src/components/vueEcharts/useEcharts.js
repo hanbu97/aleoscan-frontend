@@ -3,11 +3,30 @@ import {
     onMounted,
     onBeforeUnmount,
     getCurrentInstance,
-    ComponentInternalInstance
 } from 'vue'
 import * as echarts from 'echarts'
-import { throttle } from '../../utils'
+import WorldGeo from "../../map/json/world.json";
+import "echarts/lib/chart/map";
 
+function throttle(fn, delay = 3000) {
+    let time = null
+    let startTime
+    return function (...args) {
+        // @ts-ignore
+        const ctx = this
+        const now = Date.now()
+        if (startTime && now < startTime + delay) {
+            if (timer) clearTimeout(timer)
+            timer = setTimeout(() => {
+                startTime = now
+                fn.apply(ctx, args)
+            }, delay)
+        } else {
+            startTime = now
+            fn.apply(ctx, args)
+        }
+    }
+}
 
 export default function useEcharts(props) {
     let vm
@@ -24,7 +43,9 @@ export default function useEcharts(props) {
         if (echartsInstance) {
             return
         }
+        echarts.registerMap("world", WorldGeo);
         echartsInstance = echarts.init(chartEl)
+        console.log(echarts);
         echartsInstance.setOption(options || {}, true)
     }
 

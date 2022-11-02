@@ -5,7 +5,7 @@ import App from './App.vue'
 import router from './router'
 
 import * as echarts from 'echarts';
-import china from 'echarts/map/json/china.json';
+import china from './map/json/china.json';
 echarts.registerMap('china', china);
 
 import './assets/main.css'

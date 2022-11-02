@@ -9,10 +9,11 @@
 import * as echarts from "echarts/core";
 import ECharts from "vue-echarts";
 // import "../../node_modules/echarts/map/js/world.js";
-import "../../node_modules/echarts/map/js/world.js";
+import "../map/js/world.js"
+// import "../../node_modules/echarts/map/js/world.js";
 // import "../../node_modules/echarts/map/js/china.js";
-import "../../node_modules/echarts/map/js/world.js";
-import WorldGeo from '../../node_modules/echarts/map/json/world.json'
+import "../map/js/world.js";
+import WorldGeo from '../map/json/world.json'
 
 export default {
   name: "DailyActiveChart",

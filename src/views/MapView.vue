@@ -9,7 +9,7 @@
 <script>
 import * as echarts from "echarts/core";
 import "echarts/lib/chart/map";
-import WorldGeo from "../../node_modules/echarts/map/json/world.json";
+import WorldGeo from "../map/json/world.json";
 
 export default {
   data() {

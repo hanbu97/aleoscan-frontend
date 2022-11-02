@@ -1,8 +1,6 @@
 <template>
   <div class="about">
-    <!-- <h1>This is an about page</h1> -->
-    <!-- <div id="myMap" ref="myMap" style="height: 100vh;"></div> -->
-    <div id="myMap" ref="myMap" style="width: 100vmax; height: 100vh;"></div>
+    <div id="myMap" ref="myMap" style="width: 100vw; height: 100vh;"></div>
   </div>
 </template>
 
@@ -106,18 +104,10 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 #myMap {
   padding-top: 0px;
   padding-left: 300px;
   overflow: hidden;
 }
-
-/* @media (min-width: 1024px) { */
-/* .about { */
-/* min-height: 100vh; */
-/* display: flex; */
-/* align-items: center; */
-/* } */
-/* } */
 </style>

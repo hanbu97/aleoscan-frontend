@@ -1,7 +1,8 @@
 <template>
   <div class="about">
     <!-- <h1>This is an about page</h1> -->
-    <div id="myMap" ref="myMap" style="height: 100vh; z-index: 1111;"></div>
+    <!-- <div id="myMap" ref="myMap" style="height: 100vh;"></div> -->
+    <div id="myMap" ref="myMap" style="width: 100vmax; height: 100vh;"></div>
   </div>
 </template>
 
@@ -31,7 +32,7 @@ export default {
             },
           },
           roam: false,
-          zoom: 1.2,
+          zoom: 1.5,
           itemStyle: {
             normal: {
               areaColor: "rgba(2,37,101,.5)",
@@ -107,7 +108,6 @@ export default {
 
 <style>
 #myMap {
-  z-index: 0;
   padding-top: 0px;
   padding-left: 300px;
   overflow: hidden;

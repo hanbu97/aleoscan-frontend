@@ -14,7 +14,7 @@ import topMenu from "./components/TopMenu.vue";
   </div>
   <!-- </el-col> -->
   <!-- </el-row> -->
-  <RouterView />
+  <!-- <RouterView /> -->
 
   <!-- <div class="common-layout"> -->
   <!-- <el-affix target=".common-layout" :offset="1000"> -->

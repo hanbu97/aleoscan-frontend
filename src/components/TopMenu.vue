@@ -11,10 +11,18 @@
       active-text-color="#fff"
     >
       <p class="logo-title"><i class="el-icon-user"></i>Aleo Scan</p>
-      <el-menu-item index="1" style="margin-left: 600px">Home</el-menu-item>
-      <el-menu-item index="2">News</el-menu-item>
-      <el-menu-item index="3">Map</el-menu-item>
-      <el-menu-item index="4">Navigation</el-menu-item>
+      <el-menu-item index="1" style="margin-left: 600px"
+        ><RouterLink to="/">Home</RouterLink></el-menu-item
+      >
+      <el-menu-item index="2"
+        ><RouterLink to="/news">News</RouterLink></el-menu-item
+      >
+      <el-menu-item index="3"
+        ><RouterLink to="/map">Map</RouterLink></el-menu-item
+      >
+      <el-menu-item index="4"
+        ><RouterLink to="/navigation">Navigation</RouterLink></el-menu-item
+      >
     </el-menu>
   </div>
 </template>

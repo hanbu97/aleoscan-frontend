@@ -12,6 +12,8 @@
   </div>
 </template>
 
+//asdf 
+
 <script>
 import Echarts from "./common/echarts";
 import echarts from "echarts";

@@ -40,13 +40,60 @@ const  Ecosystem = [
       </div>
     </template>
     <el-row :gutter="20" justify="space-evenly">
-    <el-col :span="4"  v-for="item in OfficialResources" justify="space-evenly"  :key="item.text">
+
+    <el-col :span="6" justify="space-evenly" >
       <el-button
       link
       >
-      <el-link :href="item.link" target="_blank">{{item.text}}</el-link>
+      <el-link :href="OfficialResources[0].link" target="_blank">{{OfficialResources[0].text}}</el-link>
       </el-button
     >
+    </el-col>
+    <el-col :span="6" justify="space-evenly" >
+      <el-button
+      link
+      >
+      <el-link :href="OfficialResources[1].link" target="_blank">{{OfficialResources[1].text}}</el-link>
+      </el-button
+    >
+    </el-col>
+    <el-col :span="6" justify="space-evenly" >
+      <el-button
+      link
+      >
+      <el-link :href="OfficialResources[2].link" target="_blank">{{OfficialResources[2].text}}</el-link>
+      </el-button
+    >
+    </el-col>
+    <el-col :span="6" justify="space-evenly" >
+      <el-button
+      link
+      >
+      <el-link :href="OfficialResources[3].link" target="_blank">{{OfficialResources[3].text}}</el-link>
+      </el-button
+    >
+    </el-col>
+   </el-row>
+      <el-row :gutter="20" justify="space-evenly" style="margin-top:20px;">
+    <el-col :span="6" justify="space-evenly" >
+      <el-button
+      link
+      >
+      <el-link :href="OfficialResources[4].link" target="_blank">{{OfficialResources[4].text}}</el-link>
+      </el-button
+    >
+    </el-col>
+    <el-col :span="6" justify="space-evenly" >
+      <el-button
+      link
+      >
+      <el-link :href="OfficialResources[5].link" target="_blank">{{OfficialResources[5].text}}</el-link>
+      </el-button
+    >
+    </el-col>
+    <el-col :span="6" justify="space-evenly" >
+    </el-col>
+    <el-col :span="6" justify="space-evenly" >
     </el-col>
    </el-row>
   </el-card>
@@ -65,6 +112,7 @@ const  Ecosystem = [
       </el-button
     >
     </el-col>
+    
    </el-row>
   </el-card>
   <el-card class="box-card">
@@ -113,7 +161,7 @@ const  Ecosystem = [
       <el-button
       link
       >
-      <el-link :href="item.link" target="_blank">{{item.text}}</el-link>
+      <el-link  :href="item.link" target="_blank">{{item.text}}</el-link>
       </el-button
     >
     </el-col>
@@ -137,9 +185,26 @@ const  Ecosystem = [
 .item {
   margin-bottom: 18px;
 }
-
+:deep .el-card{
+    border: none;
+  }
+  :deep .el-card__header {
+    border-bottom: 1px solid #606266;
+  }
 .box-card {
   margin-top: 20px;
   width: 100%;
+  background: #1F2027;
+  .card-header{
+    color: #fff;
+  }
+ 
+  .white{
+    color: #fff;
+  }
+ :deep .el-link__inner{
+    color: #fff;
+
+  }
 }
 </style>

@@ -39,8 +39,6 @@ import topMenu from "./components/TopMenu.vue";
   width: 1200px;
   margin: 0 auto;
   position: relative;
-  top: 30px;
-  padding-top: 20px;
   height: calc(100% - 60px);
 }
 

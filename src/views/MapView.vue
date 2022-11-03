@@ -75,7 +75,7 @@ onMounted(() =>{
 
 <style lang="scss" scoped>
 .content {
-  background: #FFFFFF;
+  background: #1F2026;
   border-radius: 20px;
 }
 </style>

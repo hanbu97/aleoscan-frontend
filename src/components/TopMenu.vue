@@ -5,11 +5,13 @@
       class="el-menu-demo"
       mode="horizontal"
       @select="handleSelect"
+      active-text-color="#fff"
+        background-color="#545c64"
       router
       text-color="gray"
     >
-      <el-menu-item index="/Home" 
-        ><RouterLink to="/Home">Home</RouterLink></el-menu-item
+      <el-menu-item index="/home" 
+        ><RouterLink to="/home">Home</RouterLink></el-menu-item
       >
       <el-menu-item index="/news" 
         ><RouterLink to="/news">News</RouterLink></el-menu-item
@@ -26,9 +28,14 @@
 <style lang="scss" scoped>
 .menu-page{
  width: 100%;
- position: fixed;
+ position: relative;
  top: 0;
  left: 0;
+ background: #13141B;
+ .el-menu--horizontal{
+ background: #13141B;
+ border-bottom:none;
+ }
 //  height: 00px;
 }
 .el-menu-demo{
@@ -42,7 +49,7 @@ export default {
   name: "topMenu",
   data() {
     return {
-      activeIndex1: "/Home",
+      activeIndex1: "/home",
     };
   },
   mounted(){

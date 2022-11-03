@@ -5,19 +5,20 @@
       class="el-menu-demo"
       mode="horizontal"
       @select="handleSelect"
+      router
       text-color="gray"
     >
-      <el-menu-item index="1" 
-        ><RouterLink to="/">首页</RouterLink></el-menu-item
+      <el-menu-item index="/Home" 
+        ><RouterLink to="/Home">Home</RouterLink></el-menu-item
       >
-      <el-menu-item index="2"
-        ><RouterLink to="/news">新闻</RouterLink></el-menu-item
+      <el-menu-item index="/news" 
+        ><RouterLink to="/news">News</RouterLink></el-menu-item
       >
-      <el-menu-item index="3"
-        ><RouterLink to="/map">节点地图</RouterLink></el-menu-item
+      <el-menu-item index="/map"
+        ><RouterLink to="/map">Map</RouterLink></el-menu-item
       >
-      <el-menu-item index="4"
-        ><RouterLink to="/navigation">导航</RouterLink></el-menu-item
+      <el-menu-item index="/navigation"
+        ><RouterLink to="/navigation">Navigation</RouterLink></el-menu-item
       >
     </el-menu>
   </div>
@@ -41,20 +42,22 @@ export default {
   name: "topMenu",
   data() {
     return {
-      activeIndex1: "0",
+      activeIndex1: "/Home",
     };
   },
+  mounted(){
+    this.getUrlPath()
+  },
   methods: {
-    handleSelect(key, keyPath) {
-      // var name = "";
-      // if (key === "1") name = "homepage";
-      // if (key === "4") name = "productpage";
-      // if (key === "3") name = "securityresearch";
-      // if (key === "2") name = "aboutus";
-      // var targetEle = document.querySelector("." + name);
-      // var offsetTop = targetEle.offsetTop;
-      // document.documentElement.scrollTop = offsetTop - 150;
+    handleSelect(key) {
+      this.activeIndex1 = key
+      this.$router.push(key)
     },
+    getUrlPath(){
+      this.activeIndex1 = window.location.pathname;
+      console.log(this.activeIndex1);
+      // console.log(window.location);
+    }
   },
 };
 </script>

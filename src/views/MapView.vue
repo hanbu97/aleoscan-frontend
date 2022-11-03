@@ -1,5 +1,5 @@
 <template>
-  <VueEcharts :options="mapOptions" ref="echarts" />
+  <VueEcharts :options="mapOptions" class="content" ref="echarts" />
 </template>
 
 <script setup >
@@ -23,7 +23,7 @@ function createMapOption(data) {
               show: false,
             },
           },
-          roam: false,
+          roam:true,
           zoom: 1.5,
           itemStyle: {
             normal: {
@@ -74,5 +74,8 @@ onMounted(() =>{
 </script>
 
 <style lang="scss" scoped>
-
+.content {
+  background: #FFFFFF;
+  border-radius: 20px;
+}
 </style>

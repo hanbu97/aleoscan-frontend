@@ -7,7 +7,6 @@ specifiers:
   echarts: ^5.4.0
   element-plus: ^2.2.19
   element-ui: ^2.15.10
-  pinia: ^2.0.23
   sass: ^1.55.0
   scss: ^0.2.4
   unplugin-auto-import: ^0.11.4
@@ -23,7 +22,6 @@ dependencies:
   echarts: 5.4.0
   element-plus: 2.2.19_vue@3.2.41
   element-ui: 2.15.10_vue@3.2.41
-  pinia: 2.0.23_vue@3.2.41
   sass: registry.npmmirror.com/sass/1.55.0
   scss: registry.npmmirror.com/scss/0.2.4
   vue: 3.2.41
@@ -680,23 +678,6 @@ packages:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
     dev: true
-
-  /pinia/2.0.23_vue@3.2.41:
-    resolution: {integrity: sha512-N15hFf4o5STrxpNrib1IEb1GOArvPYf1zPvQVRGOO1G1d74Ak0J0lVyalX/SmrzdT4Q0nlEFjbURsmBmIGUR5Q==}
-    peerDependencies:
-      '@vue/composition-api': ^1.4.0
-      typescript: '>=4.4.4'
-      vue: ^2.6.14 || ^3.2.0
-    peerDependenciesMeta:
-      '@vue/composition-api':
-        optional: true
-      typescript:
-        optional: true
-    dependencies:
-      '@vue/devtools-api': 6.4.5
-      vue: 3.2.41
-      vue-demi: 0.13.11_vue@3.2.41
-    dev: false
 
   /pkg-types/0.3.6:
     resolution: {integrity: sha512-uQZutkkh6axl1GxDm5/+8ivVdwuJ5pyDGqJeSiIWIUWIqYiK3p9QKozN/Rv6eVvFoeSWkN1uoYeSDBwwBJBtbg==}

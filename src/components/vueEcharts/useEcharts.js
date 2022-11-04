@@ -57,13 +57,13 @@ export default function useEcharts(props) {
         }
     })
 
-    // 监听 window resize
+    //  window resize
     const listenResize = throttle(() => {
         // const { width, height } = chartEl.getBoundingClientRect()
         // resizeStyle.width = width + 'px'
         // resizeStyle.height = height + 'px'
         echartsInstance.setOption(props.options, false)
-        echartsInstance.resize() // 画布大小自适应 resize
+        echartsInstance.resize() //  resize
     }, 200)
 
     onMounted(() => {

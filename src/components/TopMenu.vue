@@ -10,7 +10,7 @@
       router
       text-color="gray"
     >
-      <h3 style="color:#fff" class="title">sadfsdf</h3>
+      <h3 style="color:#fff" class="title">Aleo Scan</h3>
       <el-menu-item index="/map"
         ><RouterLink to="/map">Map</RouterLink></el-menu-item
       >
@@ -35,9 +35,9 @@
 }
 .title{
   position: absolute;
-  left: 20px;
-  font-size: 20px;
-  top: 50%;
+  left: 60px;
+  font-size: 24px;
+  top: 60%;
   transform: translateY(-50%);
 }
 :deep .el-menu-item{

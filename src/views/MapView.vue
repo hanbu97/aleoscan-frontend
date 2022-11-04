@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-import {onMounted, ref} from "vue";
+import {onMounted, onUnmounted, ref} from "vue";
 import VueEcharts from '../components/vueEcharts/inex.vue'
 import {getMapData} from "../api/api"
 
@@ -16,7 +16,7 @@ function createMapOption(data) {
       // sublink: 'http://www.pm25.in',
       left: 'left',
       textStyle: {
-        color: '#0078F7',
+        color: '#FFE76F',
         fontSize:20
       },
       subtextStyle :{
@@ -78,16 +78,20 @@ function createMapOption(data) {
 const MAP_DATA = "mp_data"
 const mapOptions = ref({})
 const total = ref({})
+let time =""
 onMounted(() => {
   MapData()
   startInterval()
 })
 
 function startInterval() {
-  setInterval(() => {
+  time = setInterval(() => {
     MapData()
   }, 1000 * 60 * 10);
 }
+onUnmounted(() =>{
+  clearInterval(time)
+})
 
 function MapData() {
 

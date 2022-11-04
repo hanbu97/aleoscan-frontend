@@ -45,7 +45,6 @@ export default function useEcharts(props) {
         }
         echarts.registerMap("world", WorldGeo);
         echartsInstance = echarts.init(chartEl)
-        console.log(echarts);
         echartsInstance.setOption(options || {}, true)
     }
 

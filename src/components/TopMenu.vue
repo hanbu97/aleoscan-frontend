@@ -10,10 +10,10 @@
       router
       text-color="gray"
     >
-      <!-- <el-menu-item index="/home" 
+      <!-- <el-menu-item index="/home"
         ><RouterLink to="/home">Home</RouterLink></el-menu-item
       >
-      <el-menu-item index="/news" 
+      <el-menu-item index="/news"
         ><RouterLink to="/news">News</RouterLink></el-menu-item
       > -->
       <el-menu-item index="/map"
@@ -55,6 +55,11 @@ export default {
       activeIndex1: "/home",
     };
   },
+  watch: {
+    $route(to, from){
+      this.activeIndex1 = to.href
+    },
+  },
   mounted(){
     this.getUrlPath()
   },
@@ -65,8 +70,6 @@ export default {
     },
     getUrlPath(){
       this.activeIndex1 = window.location.pathname;
-      console.log(this.activeIndex1);
-      // console.log(window.location);
     }
   },
 };

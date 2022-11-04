@@ -156,14 +156,22 @@ const  Ecosystem = [
         <span> Ecosystem</span>
       </div>
     </template>
-    <el-row :gutter="20" justify="space-evenly">
-    <el-col  v-for="item in Ecosystem" justify="space-evenly"  :key="item.text">
+    <el-row :gutter="6" justify="space-evenly">
+      <el-col :span="6" justify="space-evenly" >
       <el-button
       link
       >
-      <el-link  :href="item.link" target="_blank">{{item.text}}</el-link>
+      <el-link :href="Ecosystem[0].link" target="_blank">{{Ecosystem[0].text}}</el-link>
       </el-button
     >
+    </el-col>
+    <el-col :span="6" justify="space-evenly" >
+    </el-col>
+    <el-col :span="6" justify="space-evenly" >
+    
+    </el-col>
+    <el-col :span="6" justify="space-evenly" >
+      
     </el-col>
    </el-row>
  
@@ -206,5 +214,8 @@ const  Ecosystem = [
     color: #fff;
 
   }
+}
+:deep .el-col-6{
+  text-align: center;
 }
 </style>

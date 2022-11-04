@@ -10,12 +10,12 @@
       router
       text-color="gray"
     >
-      <el-menu-item index="/home" 
+      <!-- <el-menu-item index="/home" 
         ><RouterLink to="/home">Home</RouterLink></el-menu-item
       >
       <el-menu-item index="/news" 
         ><RouterLink to="/news">News</RouterLink></el-menu-item
-      >
+      > -->
       <el-menu-item index="/map"
         ><RouterLink to="/map">Map</RouterLink></el-menu-item
       >

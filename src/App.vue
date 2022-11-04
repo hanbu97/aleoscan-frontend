@@ -37,9 +37,10 @@ import topMenu from "./components/TopMenu.vue";
 
 .content {
   width: 1200px;
+  /* width: calc(100% - 120px); */
   margin: 0 auto;
   position: relative;
-  height: calc(100% - 60px);
+  /* height: calc(100% - 60px); */
 }
 
 nav a.router-link-exact-active {

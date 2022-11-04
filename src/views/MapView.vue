@@ -1,21 +1,23 @@
 <template>
-  <VueEcharts :options="mapOptions" class="content" ref="echarts" />
+  <VueEcharts :options="mapOptions" class="contents" ref="echarts" />
 </template>
 
 <script setup >
 import { onMounted, ref,getCurrentInstance } from "vue";
 import VueEcharts from '../components/vueEcharts/inex.vue'
-
+import {getMapData} from "../api/api"
 function createMapOption(data) {
   return {
         backgroundColor: "rgba(0, 0, 0, 0)",
         title: {
-          left: "center",
-          top: "0",
-          textStyle: {
-            color: "#fff",
-          },
-        },
+    text: '地图节点分布',
+    // subtext: 'data from PM25.in',
+    // sublink: 'http://www.pm25.in',
+    left: 'left',
+    textStyle: {
+      color: '#FFE76F'
+    }
+  },
         geo: {
           map: "world",
           label: {
@@ -36,7 +38,13 @@ function createMapOption(data) {
           },
         },
         tooltip: {
-          trigger: "item",
+          // trigger: "item",
+          formatter:function(params){
+            return `
+            <p>City: ${params.name}</p>
+            <p>IP: ${params.value[2]}</p>
+            `
+          }
         },
 
         //左侧小导航图标
@@ -47,35 +55,54 @@ function createMapOption(data) {
             name: "Peer Info",
             type: "scatter",
             coordinateSystem: "geo",
-            data: [
-              { name: "海门", value: [-121.15, 31.89, 90] },
-              { name: "鄂尔多斯", value: [109.781327, 39.608266, 90] },
-              { name: "招远", value: [120.38, 37.35, 90] },
-              { name: "舟山", value: [122.207216, 29.985295, 90] },
-            ], //数据
+            data: data, //数据
             symbolSize: function (val) {
-              return val[2] / 15;
+              return 6;
             },
+            
             itemStyle: {
               normal: {
                 color: "#ffeb7b",
               },
             },
-          },
+            encode: {
+        value: 2
+      },
+          },   
         ],
       }
 }
 
 const mapOptions = ref({})
-onMounted(() =>{
-    mapOptions.value = createMapOption()
+onMounted(() =>{  
+  MapData()
+  startInterval()
 })
 
+function startInterval(){
+  setInterval(() => {
+      MapData()
+    }, 1000 * 60 *60 * 10);
+}
+
+ function MapData(){
+  getMapData().then(res =>{
+    const data = res.ips.map((v)=>{
+      return {
+        name:v.city,
+        value:[v.long,v.lat,v.ip],
+      }
+    })
+    mapOptions.value = createMapOption(data)
+  })
+}
 </script>
 
 <style lang="scss" scoped>
-.content {
+.contents {
   background: #1F2026;
   border-radius: 20px;
+  height: calc(100vh - 90px);
+  width: 100% !important;
 }
 </style>

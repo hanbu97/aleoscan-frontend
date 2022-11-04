@@ -10,7 +10,7 @@ function createMapOption(data) {
   return {
         backgroundColor: "rgba(0, 0, 0, 0)",
         title: {
-    text: '地图节点分布',
+    text: 'Node Map',
     // subtext: 'data from PM25.in',
     // sublink: 'http://www.pm25.in',
     left: 'left',
@@ -46,16 +46,12 @@ function createMapOption(data) {
             `
           }
         },
-
-        //左侧小导航图标
-
-        //配置属性
         series: [
           {
             name: "Peer Info",
             type: "scatter",
             coordinateSystem: "geo",
-            data: data, //数据
+            data: data, //data
             symbolSize: function (val) {
               return 6;
             },
@@ -93,6 +89,7 @@ function startInterval(){
         value:[v.long,v.lat,v.ip],
       }
     })
+
     mapOptions.value = createMapOption(data)
   })
 }

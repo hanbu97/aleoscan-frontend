@@ -38,6 +38,9 @@
  }
 //  height: 00px;
 }
+:deep .el-menu-item{
+  width: 100px;
+}
 .el-menu-demo{
   display: flex;
   justify-content: center;

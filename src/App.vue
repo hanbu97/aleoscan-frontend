@@ -36,7 +36,7 @@ import topMenu from "./components/TopMenu.vue";
 }
 
 .content {
-  width: 1200px;
+  width: 1300px;
   /* width: calc(100% - 120px); */
   margin: 0 auto;
   position: relative;

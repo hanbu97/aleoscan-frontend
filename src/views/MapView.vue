@@ -12,11 +12,16 @@ function createMapOption(data) {
     backgroundColor: "rgba(0, 0, 0, 0)",
     title: {
       text: 'Node Map',
-      // subtext: 'data from PM25.in',
+      subtext:"Peers: "+ total.value,
       // sublink: 'http://www.pm25.in',
       left: 'left',
       textStyle: {
-        color: '#FFE76F'
+        color: '#0078F7',
+        fontSize:20
+      },
+      subtextStyle :{
+        color: '#FFE76F',
+        fontSize:18
       }
     },
     geo: {
@@ -72,6 +77,7 @@ function createMapOption(data) {
 
 const MAP_DATA = "mp_data"
 const mapOptions = ref({})
+const total = ref({})
 onMounted(() => {
   MapData()
   startInterval()
@@ -86,6 +92,7 @@ function startInterval() {
 function MapData() {
 
   getMapData().then(res => {
+    total.value = res.total
     const data = res.ips.map((v) => {
       return {
         name: v.city,

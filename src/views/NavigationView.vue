@@ -1,5 +1,4 @@
 <script setup>
-import TheWelcome from "../components/TheWelcome.vue";
 const OfficialResources = [
   { text: 'Website',link:"https://www.aleo.org/" },
   { text: 'Twitter' ,link:"https://twitter.com/AleoHQ"},

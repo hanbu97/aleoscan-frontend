@@ -10,12 +10,7 @@
       router
       text-color="gray"
     >
-      <!-- <el-menu-item index="/home"
-        ><RouterLink to="/home">Home</RouterLink></el-menu-item
-      >
-      <el-menu-item index="/news"
-        ><RouterLink to="/news">News</RouterLink></el-menu-item
-      > -->
+      <h3 style="color:#fff" class="title">sadfsdf</h3>
       <el-menu-item index="/map"
         ><RouterLink to="/map">Map</RouterLink></el-menu-item
       >
@@ -37,6 +32,13 @@
  border-bottom:none;
  }
 //  height: 00px;
+}
+.title{
+  position: absolute;
+  left: 20px;
+  font-size: 20px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 :deep .el-menu-item{
   width: 100px;

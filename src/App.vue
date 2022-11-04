@@ -1,7 +1,5 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
-import Home from "./components/Home.vue";
-import BaseHeader from "./components/Header.vue";
 import topMenu from "./components/TopMenu.vue";
 </script>
 

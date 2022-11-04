@@ -2,27 +2,28 @@
   <VueEcharts :options="mapOptions" class="contents" ref="echarts" />
 </template>
 
-<script setup >
-import { onMounted, ref,getCurrentInstance } from "vue";
+<script setup>
+import {onMounted, ref} from "vue";
 import VueEcharts from '../components/vueEcharts/inex.vue'
 import {getMapData} from "../api/api"
+
 function createMapOption(data) {
   return {
-        backgroundColor: "rgba(0, 0, 0, 0)",
-        title: {
-    text: 'Node Map',
-    // subtext: 'data from PM25.in',
-    // sublink: 'http://www.pm25.in',
-    left: 'left',
-    textStyle: {
-      color: '#FFE76F'
-    }
-  },
-        geo: {
-          map: "world",
-          label: {
-            emphasis: {
-              show: false,
+    backgroundColor: "rgba(0, 0, 0, 0)",
+    title: {
+      text: 'Node Map',
+      // subtext: 'data from PM25.in',
+      // sublink: 'http://www.pm25.in',
+      left: 'left',
+      textStyle: {
+        color: '#FFE76F'
+      }
+    },
+    geo: {
+      map: "world",
+      label: {
+        emphasis: {
+          show: false,
             },
           },
           roam:true,
@@ -55,42 +56,49 @@ function createMapOption(data) {
             symbolSize: function (val) {
               return 6;
             },
-            
+
             itemStyle: {
               normal: {
                 color: "#ffeb7b",
               },
             },
             encode: {
-        value: 2
-      },
-          },   
+              value: 2
+            },
+          },
         ],
       }
 }
 
+const MAP_DATA = "mp_data"
 const mapOptions = ref({})
-onMounted(() =>{  
+onMounted(() => {
   MapData()
   startInterval()
 })
 
-function startInterval(){
+function startInterval() {
   setInterval(() => {
-      MapData()
-    }, 1000 * 60 *60 * 10);
+    MapData()
+  }, 1000 * 60 * 10);
 }
 
- function MapData(){
-  getMapData().then(res =>{
-    const data = res.ips.map((v)=>{
+function MapData() {
+
+  getMapData().then(res => {
+    const data = res.ips.map((v) => {
       return {
-        name:v.city,
-        value:[v.long,v.lat,v.ip],
+        name: v.city,
+        value: [v.long, v.lat, v.ip],
       }
     })
-
+    localStorage.setItem(MAP_DATA, JSON.stringify(data))
     mapOptions.value = createMapOption(data)
+  }).catch(() => {
+    const map_data = JSON.parse(localStorage.getItem(MAP_DATA))
+    if (map_data) {
+      mapOptions.value = createMapOption(map_data)
+    }
   })
 }
 </script>

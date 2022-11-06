@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const server = axios.create({
-    baseURL: "http://113.107.237.201:9732/api",
+    baseURL: "http://www.aleo.lol:9732/api",
+
 })
 
 server.interceptors.request.use((res => {
